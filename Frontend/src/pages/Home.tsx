@@ -66,9 +66,9 @@ const Home = () => {
               <span className="text-secondary font-semibold">Since 2025</span>
             </div>
 
-            {/* ✅ Typewriter Text Effect */}
+            
             <h1 className="text-6xl md:text-8xl font-bold font-space bg-gradient-to-r from-[#6EE7B7] via-[#3B82F6] to-[#9333EA] bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(147,51,234,0.6)]">
-              Tech Verse
+              TechVerse
             </h1>
 
             {/* Description */}
@@ -128,7 +128,7 @@ const Home = () => {
       <section className="relative py-10 bg-gradient-to-b from-blue-50 via-blue-100 to-gray-100 overflow-hidden">
         {/* Heading */}
         <h2 className="text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-12 mt-6 tracking-tight leading-tight drop-shadow-lg bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-600 bg-clip-text text-transparent">
-          Welcome to Tech Verse
+          Welcome to TechVerse
         </h2>
 
         <div className="relative flex flex-col items-center w-full mt-12">

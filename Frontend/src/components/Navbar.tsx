@@ -39,7 +39,7 @@ const Navbar = () => {
               className="h-12 w-12 rounded-full object-cover transition-transform group-hover:scale-110"
             />
             <div className="hidden md:block">
-              <h1 className="text-xl font-bold text-foreground">Tech Verse</h1>
+              <h1 className="text-xl font-bold text-foreground">TechVerse</h1>
               <p className="text-xs text-muted-foreground ml-1">Innovation Hub</p>
             </div>
           </Link>

@@ -4,7 +4,7 @@ const Gallery = () => {
 
 const [galleryItems, setGalleryItems] = useState([]);
 useEffect(() => {
-  fetch('https://ffhctn51-5000.inc1.devtunnels.ms/gallery')
+  fetch('http://localhost:5000/gallery')
     .then(res => res.json())
     .then(data => setGalleryItems(data))
     .catch(error => console.error('Error fetching gallery items:', error));
