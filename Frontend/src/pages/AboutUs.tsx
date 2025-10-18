@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Linkedin, Mail, Github } from "lucide-react";
 import sumanpreet from "@/assets/sumanpreet.jpg";
-import lakshman from "@/assets/lakshman.jpg"
+import lakshman from "@/assets/lakshman.jpg";
 
 const AboutUs = () => {
   const teamMembers = [
@@ -80,16 +80,19 @@ const AboutUs = () => {
         </div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <span className="inline-block px-4 py-2 bg-white/10 rounded-full text-sm font-medium backdrop-blur-md border border-white/20 shadow-sm mb-6 tracking-widest animate-fade-in">
-            🌟 Our Team
+            Our Team
           </span>
           <h1 className="text-7xl font-extrabold pb-3 mb-8 bg-gradient-to-r from-[#FFD54F] via-white to-[#4676E6] bg-clip-text text-transparent drop-shadow-xl">
             About Us
           </h1>
           <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
             Meet our{" "}
-            <span className="font-semibold text-[#FFD54F]">passionate team</span> who
-            make <span className="font-semibold text-[#B16FFF]">Techverse</span> thrive
-            with innovation and creativity.
+            <span className="font-semibold text-[#FFD54F]">
+              passionate team
+            </span>{" "}
+            who make{" "}
+            <span className="font-semibold text-[#d746ffff]">Techverse</span>{" "}
+            thrive with innovation and creativity.
           </p>
         </div>
       </section>
@@ -102,8 +105,10 @@ const AboutUs = () => {
               Core Organizing Team
             </h2>
             <p className="text-lg md:text-xl max-w-2xl mx-auto leading-relaxed text-gray-500">
-              Dedicated leaders working tirelessly to create an unforgettable experience. <br className="hidden md:block" />
-              Their passion, skill, and teamwork drive Techverse forward with excellence.
+              Dedicated leaders working tirelessly to create an unforgettable
+              experience. <br className="hidden md:block" />
+              Their passion, skill, and teamwork drive Techverse forward with
+              excellence.
             </p>
           </div>
 
@@ -124,19 +129,20 @@ const AboutUs = () => {
                 >
                   {/* Front Side */}
                   <Card className="absolute inset-0 p-6 text-center border border-blue-200 shadow-lg rounded-xl bg-white [backface-visibility:hidden] transition-shadow duration-300 group-hover:shadow-blue-300/50">
-                   <div className="w-28 h-28 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-500 shadow-lg group-hover:scale-110 transition-transform duration-300">
-  <img
-    src={member.image}      // imported image like sumanpreet.jpg
-    alt={member.name}
-    className="w-full h-full object-cover"
-  />
-</div>
-
+                    <div className="w-28 h-28 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-500 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      <img
+                        src={member.image} // imported image like sumanpreet.jpg
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
 
                     <h3 className="text-xl font-bold text-gray-800 mb-1">
                       {member.name}
                     </h3>
-                    <p className="text-blue-600 font-semibold mb-4">{member.role}</p>
+                    <p className="text-blue-600 font-semibold mb-4">
+                      {member.role}
+                    </p>
 
                     <div className="flex gap-2 justify-center">
                       <Button
@@ -186,8 +192,8 @@ const AboutUs = () => {
             Want to Join Our Team?
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            We're always looking for passionate individuals to help organize future
-            events.
+            We're always looking for passionate individuals to help organize
+            future events.
           </p>
           <Button
             size="lg"

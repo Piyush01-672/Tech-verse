@@ -26,12 +26,15 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo Section */}
-          <Link to="/" className="flex items-center gap-3 group relative">
-            <img 
+          <div className="flex items-center gap-3 relative">
+          <a href="https://www.ctuniversity.in/" target="_blank">
+            <img
               src={universityLogo}
               alt="CT Uni Logo" 
-              className="h-12 w-12 rounded-full object-cover transition-transform group-hover:scale-110"
+              className="h-12 w-12 rounded-full object-cover transition-transform hover:scale-110"
             />
+          </a>
+          <Link to="/" className="flex items-center gap-3 group relative">
             <IoRocket className="text-[1.7rem] text-blue-500 drop-shadow-[0_0_8px_#00C6FF]" />
             <img 
               src={techverseLogo} 
@@ -43,7 +46,7 @@ const Navbar = () => {
               <p className="text-xs text-muted-foreground ml-1">Innovation Hub</p>
             </div>
           </Link>
-
+</div>
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => (

@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 const Contact = () => {
   const { toast } = useToast();
@@ -17,13 +18,36 @@ const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast({
+        title: "Invalid Email!",
+        description: "Please enter a valid email address (with @ and domain).",
+        variant: "destructive",
+      });
+      return;
+    }
+    const mobileRegex = /^(\+91[-\s]?)?[0]?(91)?[6-9]\d{9}$/;
+    if (!mobileRegex.test(formData.mobile)) {
+      toast({
+        title: "Invalid Mobile Number!",
+        description: "Please enter a valid 10-digit mobile number.",
+        variant: "destructive",
+      });
+      return;
+    }
+    await fetch(`${BACKEND_URL}/contact`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
     toast({
       title: "Message Sent!",
       description: "Thank you for reaching out. We'll get back to you soon.",
     });
-    setFormData({ name: "", email: "", mobile:"",subject: "", message: "" });
+    setFormData({ name: "", email: "", mobile: "", subject: "", message: "" });
   };
 
   const handleChange = (
@@ -57,7 +81,7 @@ const Contact = () => {
         {/* Centered content */}
         <div className="container mx-auto px-4 text-center relative z-10">
           <span className="inline-block px-4 py-2 bg-white/10 rounded-full text-sm font-medium backdrop-blur-md border border-white/20 shadow-sm mb-6 tracking-widest animate-fade-in">
-            🌟 Get In Touch
+            Get In Touch
           </span>
           <h1 className="text-7xl md:auto  font-extrabold pb-3 mb-8 animate-fade-in-up bg-gradient-to-r from-[#FFD54F] via-white to-[#4676E6] bg-clip-text text-transparent drop-shadow-xl">
             Contact Us
@@ -66,7 +90,7 @@ const Contact = () => {
             Have{" "}
             <span className="font-semibold text-[#FFD54F]">Questions </span>
             or want to{" "}
-            <span className="font-semibold text-[#B16FFF]">Collaborate</span>?
+            <span className="font-semibold text-[#d746ffff]">Collaborate</span>?
             We'd love to hear from you!
           </p>
         </div>
@@ -119,7 +143,12 @@ const Contact = () => {
                         Email Us
                       </h3>
                       <p className="text-muted-foreground">
-                        techverse@ctuniversity.in
+                        <a
+                          href="mailto:techverse@ctuniversity.in"
+                          className="hover:underline"
+                        >
+                          techverse@ctuniversity.in
+                        </a>
                       </p>
                     </div>
                   </div>
@@ -151,11 +180,13 @@ const Contact = () => {
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
-                  // allowFullScreen={false}
+                  allowFullScreen={false}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
-                <p className="text-muted-foreground">CT University, Ferozepur Rd, Sidhwan Khurd, Punjab 142023</p>
+                <p className="text-muted-foreground">
+                  CT University, Ferozepur Rd, Sidhwan Khurd, Punjab 142023
+                </p>
               </div>
             </div>
 
@@ -218,7 +249,6 @@ const Contact = () => {
                   />
                 </div>
 
-
                 <div className="space-y-2">
                   <Label htmlFor="message">Message *</Label>
                   <Textarea
@@ -236,7 +266,8 @@ const Contact = () => {
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full bg-gradient-to-br from-[#252D6F] to-[#4676E6] hover:opacity-90">
+                  className="w-full bg-gradient-to-br from-[#252D6F] to-[#4676E6] hover:opacity-90"
+                >
                   <Send className="w-4 h-4 mr-2" />
                   Send Message
                 </Button>

@@ -93,7 +93,7 @@ const Sponsors = () => {
         {/* Centered content */}
         <div className="container mx-auto px-4 text-center relative z-10">
           <span className="inline-block px-4 py-2 bg-white/10 rounded-full text-sm font-medium backdrop-blur-md border border-white/20 shadow-sm mb-6 tracking-widest animate-fade-in">
-            🌟 Our Partners
+             Our Partners
           </span>
           <h1 className="text-7xl md:auto  font-extrabold pb-3 mb-8 animate-fade-in-up bg-gradient-to-r from-[#FFD54F] via-white to-[#4676E6] bg-clip-text text-transparent drop-shadow-xl">
             Sponsors & Partners
@@ -102,7 +102,7 @@ const Sponsors = () => {
             Proud{" "}
             <span className="font-semibold text-[#FFD54F]">Partners </span>
             who believe in{" "}
-            <span className="font-semibold text-[#B16FFF]">
+            <span className="font-semibold text-[#d746ffff]">
               innovation and support{" "}
             </span>
             the next generation of tech leaders

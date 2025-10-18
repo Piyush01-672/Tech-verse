@@ -79,9 +79,9 @@ const GallerySlider = ({ galleryItems }: { galleryItems: GalleryItem[] }) => {
                           {/* <h3 className="text-2xl font-bold mb-2">
                             {item.name}
                           </h3>
-                          <Badge variant="secondary" className="mb-2">
-                            {item.category}
-                          </Badge> */}
+                            <Badge variant="secondary" className="mb-2">
+                              {item.category}
+                            </Badge> */}
                           <p className="text-sm text-white/80">{item.date}</p>
                         </div>
                       </div>

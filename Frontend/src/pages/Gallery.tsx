@@ -1,15 +1,17 @@
 import GallerySlider from "@/components/Slider";
 import { useEffect, useState } from "react";
+import Category_Carousel from "@/components/Category_Carousel";
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 const Gallery = () => {
 
 const [galleryItems, setGalleryItems] = useState([]);
 useEffect(() => {
-  fetch('https://ffhctn51-5000.inc1.devtunnels.ms/gallery')
+  fetch(`${BACKEND_URL}/gallery`)
     .then(res => res.json())
     .then(data => setGalleryItems(data))
     .catch(error => console.error('Error fetching gallery items:', error));
 }, []);
-
+const [showAllIImages, setShowAllImages] = useState(true);
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
@@ -32,7 +34,7 @@ useEffect(() => {
         {/* Centered content */}
         <div className="container mx-auto px-4 text-center relative z-10">
           <span className="inline-block px-4 py-2 bg-white/10 rounded-full text-sm font-medium backdrop-blur-md border border-white/20 shadow-sm mb-6 tracking-widest animate-fade-in">
-            🌟 Highlights
+            Highlights
           </span>
           <h1 className="text-7xl md:auto  font-extrabold pb-3 mb-8 animate-fade-in-up bg-gradient-to-r from-[#FFD54F] via-white to-[#4676E6] bg-clip-text text-transparent drop-shadow-xl">
             Event Gallery
@@ -43,7 +45,7 @@ useEffect(() => {
               excitement and innovation{" "}
             </span>
              of our previous{" "}
-            <span className="font-semibold text-[#B16FFF]">
+            <span className="font-semibold text-[#d746ffff]">
               Events
             </span>{" "}
             through our highlights. &nbsp;
@@ -52,7 +54,7 @@ useEffect(() => {
       </section>
 
       {/* Video Section */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-gradient-to-b from-blue-50 via-blue-100 to-gray-200">
         
 
           {/* <div className="max-w-4xl mx-auto">
@@ -75,7 +77,8 @@ useEffect(() => {
         
 
       {/* Gallery Grid */}
-      <GallerySlider galleryItems={galleryItems} />
+      {/* <GallerySlider galleryItems={galleryItems} /> */}
+      <Category_Carousel galleryItems={galleryItems} />
       {/* </div> */}
       </section> 
 
